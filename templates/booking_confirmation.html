@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     
+    </style>
+
+    <script>
+      // Function to delete a cookie by setting its expiration date to a past date
+      function deleteCookie(name) {
+        document.cookie =
+          name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+      }
+
+      // Usage: Delete the 'rental_start_date' cookie
+      deleteCookie('rental_start_date')
+      deleteCookie('rental_end_date')
+    </script>
+  </head>
+
+  <body style="text-align: left; font-family: Arial, sans-serif;">
+    <h2 style="color: #1879CA;">Adelaide Car</h2>
+    <h2>Booking Confirmation</h2>
+    <p>Dear {{ first_name }} {{ last_name }},</p>
+    <p>Your booking has been confirmed for the date:</p>
+    <p>Rental Start Date: {{ rental.rental_start_date }}</p>
+    <p>Rental End Date: {{ rental.rental_end_date }}</p>
+    
+    <h2>{{ car['make'] }} {{ car['model'] }} or similar</h2>
+    <p>Rental ID: {{ rental.rental_id }}</p>
+    <p>Rental Price: ${{ rental.rental_price }}</p>
+
+    <p>Contact Details:</p>
+    <div>
+        <p>Phone Number: 08 2222 2222</p>
+        <p>Email: <a href="mailto:support@adelaidecars.com.au">support@adelaidecars.com.au</a></p>
+    </div>
+    <p style="font-weight:600">Instructions:</p>
+    <p>Please collect and drop off your car during business hours at:</p>
+    <p>25 Main Street, Adelaide, 5000</p>
+    <p style="font-weight:600">Terms & Conditions:</p>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam enim eu urna consectetur, eu malesuada nisi vulputate.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam enim eu urna consectetur, eu malesuada nisi vulputate.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam enim eu urna consectetur, eu malesuada nisi vulputate.</li>
+    </ul>
+</body>
+</html>

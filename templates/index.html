@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="../static/js/main.js"></script>
+    <style>
+        * {
+            margin: 0;
+            font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+
+        }
+
+
+        header {
+            background-color: #1879CA;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            max-width: 1142px;
+            margin: 0 auto;
+        }
+
+
+        .header-content>div {
+            margin: 0;
+        }
+
+
+        .booking-section {
+            display: flex;
+            align-items: center;
+            gap: 0 40px;
+        }
+
+        .manage-booking {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .currency {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .main-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+
+        .header-continue {
+            background-image: linear-gradient(to bottom, #1879CA, rgba(0, 0, 0, 0)), url('https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/home/background-large.jpg');
+            height: 800px;
+            width: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+
+
+        }
+
+        .heading {
+            margin-bottom: 20px;
+            text-align: center;
+
+        }
+
+        .ch {
+            font-size: 50px;
+            margin: 0;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+        }
+
+        .features-container {
+            margin-bottom: 20px;
+            text-align: left;
+
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .features li {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .form-container {
+            text-align: center;
+
+
+        }
+
+        .date-form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            gap: 50px;
+            padding: 5px;
+            max-width: fit-content;
+            background-color: #FFB700;
+            border-radius: 5px;
+
+
+        }
+
+        .date-form .input {
+            display: inline;
+            background-color: white;
+            padding: 10px;
+            height: 40px;
+            border-radius: 8px;
+
+        }
+
+        .date-form label {
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            display: block;
+            text-align: left;
+            color: #474747;
+        }
+
+        .date-form input[type="date"] {
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            display: inline;
+            border: none;
+            margin: 0;
+            background: none;
+            padding: 0;
+        }
+
+        .date-form button {
+            height: 60px;
+            padding: 10px 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+
+        }
+
+        .date-form button:hover {
+            background-color: #45a049;
+        }
+
+
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .flex-item {
+            flex-basis: 30%;
+            margin: 10px;
+            padding: 15px;
+
+
+        }
+
+        .flex-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .flex-item h3 {
+            margin-top: 0;
+        }
+
+        .sub-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+            margin: 0 auto;
+        }
+
+        .sub-item {
+            flex-basis: 50%;
+            height: 150px;
+            margin: 10px;
+            padding: 20px 30px;
+            font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            border: 1px solid #ccc;
+        }
+
+        .sub-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            float: left;
+            padding: 20px;
+        }
+
+        .sub-item h3 {
+            margin-top: 0;
+        }
+
+
+        .sub-item a {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .sub-item input[type="email"] {
+            width: 40%;
+            padding: 10px 5px;
+            margin-top: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        .sub-item button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+
+        footer {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+
+
+        .footer-link {
+            background-color: #1273c4;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+
+        }
+
+        /* Styling for the footer links */
+        .footer-link a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .footer-link a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-link ul {
+            padding: 0;
+        }
+
+        .footer-link li {
+            display: inline;
+            list-style: none;
+        }
+
+        .footer-message {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 20px 10px 10px;
+            background-color: #F5F5F5;
+            color: #1A1A1A;
+            font-size: 14px;
+
+
+        }
+
+        .footer-message img {
+            height: 150px;
+        }
+
+        .top {
+            display: flex;
+
+        }
+
+        .bottom {
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            gap: 20px;
+
+        }
+
+        .content-container {
+            max-width: 1142px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            /* Adjust font size */
+            .logo {
+                font-size: 20px;
+            }
+
+            .manage-booking {
+                font-size: 15px;
+
+            }
+
+            .header-continue {
+                background-color: #1879CA;
+                background-image: none;
+                height: 70vh;
+            }
+
+            .top,
+            .content-container,
+            .content {
+                flex-direction: column;
+
+            }
+
+            .top,
+            .content {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .top img {
+                margin-top: 20px;
+            }
+
+
+            .date-form {
+                flex-direction: column;
+
+            }
+
+
+            .flex-container {
+                display: flex;
+                align-items: flex-start;
+
+            }
+
+            .ch {
+                font-size: 24px;
+            }
+
+            .features li {
+                font-size: 14px;
+            }
+
+            /* Adjust width, padding, and height */
+            .date-form {
+                gap: 20px;
+                padding: 20px;
+            }
+
+
+
+
+            .flex-item {
+                flex-basis: 100%;
+                padding: 10px;
+            }
+
+            .sub-item {
+                flex-basis: 100%;
+                height: auto;
+                padding: 20px;
+                width: 85%;
+            }
+
+            .sub-item h3 {
+                margin-top: 20px;
+            }
+
+            .sub-item img {
+                float: right;
+            }
+
+            .sub-item p {
+                display: inline-block;
+            }
+
+            .sub-item input[type="email"] {
+                width: 90%;
+            }
+
+            .sub-item button {
+                margin-top: 10px;
+                margin-left: 0;
+                width: 95%;
+            }
+
+            /* Adjust footer styles */
+            .footer-message {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .footer-message img {
+                height: 100px;
+            }
+
+            .footer-link a {
+                padding: 5px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <h1 class="logo" style="color: white;">Adelaide Cars</h1>
+            </div>
+            <div class="booking-section">
+                <div class="currency">USD</div>
+                <a href="/booking"><button class="manage-booking">Manage Booking</button></a>
+                
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="main-section">
+
+            <div class="header-continue">
+                <div class="container content-container main-left">
+                    <div class="heading">
+                        <h1 class="ch">Car Hire - Search, Compare & Save</h1>
+                    </div>
+
+                    <div class="features-container main-left">
+                        <ul class="features">
+                            <li>Free cancellations on most bookings</li>
+                            <li>60,000+ locations</li>
+                            <li>Customer support in 40+ languages</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-container">
+                        <form class="date-form" method="GET" action="/search">
+
+                            <div class="input">
+                                <label for="pick-up-date">Pick-up date</label>
+                                <input type="date" id="pick-up-date" name="pick-up-date" required>
+                            </div>
+
+                            <div class="input">
+                                <label for="drop-off-date">Drop-off date</label>
+                                <input type="date" id="drop-off-date" name="drop-off-date" required>
+                            </div>
+
+                            <div>
+                                <button type="submit">Search</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-container">
+                <section>
+                    <hr>
+
+                </section>
+            </div>
+            <div class="flex-container content-container">
+                <div class="flex-item">
+                    <img
+                        src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/usps/desktop/usp_calendar@2x.png">
+                    <h3>Flexible rentals</h3>
+                    <p>Cancel or change most bookings for free up to 48 hours before pick-up</p>
+                </div>
+                <div class="flex-item">
+                    <img
+                        src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/usps/desktop/usp_magnifier@2x.png">
+                    <h3>No hidden fees</h3>
+                    <p>Know exactly what you're paying</p>
+                </div>
+                <div class="flex-item">
+                    <img
+                        src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/usps/desktop/usp_wallet@2x.png">
+                    <h3>Price Match Guarantee</h3>
+                    <p>Found the same deal for less? We'll match the price.</p>
+                </div>
+            </div>
+            <div class="sub-container content-container">
+                <div class="sub-item">
+                    <div class="flex-content">
+                        <img
+                            src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/covid-banner/desktop/thumbnail_covid@2x.png">
+                        <div class="flex-text">
+                            <h3>Clean cars. Flexible bookings. Socially distant rental counters.</h3>
+                            <p>We're working with our partners to keep you safe and in the driving seat.</p>
+                            <a href="#" class="find-out-more">Find out more</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sub-item">
+                    <img
+                        src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/email-subscription/desktop/email_signup@2x.png">
+                    <h3>Subscribe for exclusive offers and deals!</h3>
+                    <input type="email" placeholder="Enter your email address">
+                    <button>Sign me up</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </main>
+    <footer class=".footer">
+        <section class="footer-link">
+            <ul>
+                <li><a href="#">Privacy Statement</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Modern Slavery Statement</a></li>
+                <li><a href="#">Supply Partner Enquiry and Marketplace</a></li>
+                <li><a href="#">Affiliate Programme</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </section>
+        <section class="footer-message">
+            <section class="content content-container">
+                <section class="top">
+                    <section>
+                        <p>Rentalcars.com is a trading name of Booking.com Transport Limited which is a limited company
+                            registered in England and Wales (Number: 05179829) whose registered address is at 100 New
+                            Bridge
+                            Street,
+                            London, EC4V 6JA. VAT number: GB 855349007.</p>
+                        <br>
+                        <p>Rentalcars.com is part of Booking Holdings Inc., the world leader in online travel & related
+                            services.
+                        </p>
+                    </section>
+
+                    <section>
+                        <img src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/world-travel-award-2020/desktop/world-travel-award-2020@2x.png"
+                            alt="">
+                    </section>
+                </section>
+                <section class="bottom">
+                    <p>Copyright © 2023 Booking.com Transport Limited trading as Rentalcars.com. All rights reserved</p>
+                </section>
+            </section>
+
+        </section>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .car-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        max-width: 300px;
+        overflow: hidden;
+        transition: transform 0.2s;
+        font-family: Arial, sans-serif;
+      }
+
+      .car-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .car-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .car-details {
+        padding: 20px;
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: normal;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 5px;
+        font-size: 16px;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      .important-info {
+        background-color: #f0f0f0;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .email-quote-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #6ca745;
+        color: #ffffff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .email-quote-button:hover {
+        background-color: #5b8f2a;
+      }
+
+      .email-quote-button i {
+        margin-right: 5px;
+      }
+
+      /* Style for the "Make Booking" button */
+      .make-booking-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff; /* Change the background color to your preference */
+        color: #ffffff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .make-booking-button:hover {
+        background-color: #0056b3; /* Change the hover background color to your preference */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        {% for car in cars %}
+        <div class="car-details">
+          <h2>{{ car['make'] }} {{ car['model'] }}</h2>
+          <h3>{{ car['model'] }}</h3>
+          <ul>
+            <li>Year: {{ car['year'] }}</li>
+            <li>Color: {{ car['color'] }}</li>
+            <li>Price per day: ${{ car['price_per_day'] }}</li>
+            <!-- Add more car details here... -->
+          </ul>
+          <p><strong>Pickup:</strong> Adelaide Airport (5.9 km from centre)</p>
+          <div class="important-info">
+            <p><strong>Important info:</strong> Lorem ipsum dolor sit amet</p>
+          </div>
+          <div>
+            <form action="/make_booking" method="POST">
+              <input type="hidden" name="car_id" value="{{ car['car_id'] }}" />
+              <a href="#" class="email-quote-button"
+                ><i class="far fa-envelope"></i> Email quote</a
+              >
+              <button type="submit" class="make-booking-button">
+                Make Booking
+              </button>
+            </form>
+          </div>
+        </div>
+        {% endfor %}
+      </main>
+    </div>
+  </body>
+</html>

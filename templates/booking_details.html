@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Booking</title>
+    <style>
+      /* Add your CSS styles here */
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        max-width: 1000px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .booking-summary {
+        flex: 1;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      .booking-form {
+        flex: 1;
+        padding: 20px;
+      }
+
+      /* Style for form labels */
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      /* Style for form inputs */
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      /* Style for submit button */
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Make Booking</h1>
+    <div class="container">
+      <!-- Display the booking summary on the right-hand side -->
+      <div class="booking-summary">
+        <h2>Booking Summary</h2>
+        <p>Rental Start Date: {{ rental_start_date }}</p>
+        <p>Rental End Date: {{ rental_end_date }}</p>
+        <p>Price for {{ booking_days}} days: <strong>{{ price_total }}</strong></p>
+      </div>
+      <!-- Booking form for main driver's details -->
+      <div class="booking-form">
+        <form action="/confirm_booking" method="POST">
+          <label for="email">Email address:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="first_name">First name:</label>
+          <input type="text" id="first_name" name="first_name" required />
+
+          <label for="last_name">Last name:</label>
+          <input type="text" id="last_name" name="last_name" required />
+          <input type="hidden" id="car_id" name="car_id" value="{{ car_id }}" />
+
+          <label for="contact_number">Contact number:</label>
+          <input
+            type="tel"
+            id="contact_number"
+            name="contact_number"
+            required
+          />
+
+
+          <input type="submit" value="Confirm Booking" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
